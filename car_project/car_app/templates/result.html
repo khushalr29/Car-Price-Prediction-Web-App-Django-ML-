@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car Price Prediction Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Background with gradient + animation */
+    body {
+      background: linear-gradient(-90deg, #a98a02f9, #100329f7, #070701e9, #7b0202f0);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .card {
+      background: rgba(0,);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 25px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {transform: scale(1);}
+      50% {transform: scale(1.05);}
+      100% {transform: scale(1);}
+    }
+
+    h3 {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    th {
+      width: 40%;
+      font-weight: 600;
+    }
+    .btn-custom {
+      background: linear-gradient(90deg, #ff512f, #dd2476);
+      color: #fff;
+      font-weight: 600;
+      padding: 10px 25px;
+      border-radius: 30px;
+      transition: 0.3s ease-in-out;
+    }
+    .btn-custom:hover {
+      background: linear-gradient(90deg, #dd2476, #ff512f);
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container d-flex justify-content-center align-items-center min-vh-100 mt-5">
+    <div class="col-md-8">
+      <div class="card">
+        <h3>🚘 Car Price Prediction Result</h3>
+
+        <div class="highlight">
+          💰 Predicted Price: ₹ {{ prediction }} Lakhs
+        </div>
+
+        <h5>📋 Input Details</h5>
+        <table class="table table-borderless">
+          <tbody>
+            <tr><th>Year</th><td>{{ year }}</td></tr>
+            <tr><th>Present Price (Lakhs)</th><td>{{ present_price }}</td></tr>
+            <tr><th>Kms Driven</th><td>{{ kms }}</td></tr>
+            <tr><th>Owner Count</th><td>{{ owner }}</td></tr>
+            <tr><th>Fuel Type</th><td>{{ fuel }}</td></tr>
+            <tr><th>Seller Type</th><td>{{ seller }}</td></tr>
+            <tr><th>Transmission</th><td>{{ trans }}</td></tr>
+          </tbody>
+        </table>
+
+        <h5>📌 Insights</h5>
+        <p>
+          This prediction is based on the trained ML model considering car features such as year of manufacture, present market price, mileage, ownership, and fuel/transmission type.  
+          You can use this estimate as a benchmark to <b>buy or sell your car smartly</b>.
+        </p>
+
+        <div class="text-center mt-4">
+          <a href="{% url 'home' %}" class="btn btn-custom">🔙 Back to Prediction</a>
+        </div>
+      </div>
+
+      <footer class="text-center">
+        <p>Made with ❤️ for CarDekho ML Project | Powered by Django & ML</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
