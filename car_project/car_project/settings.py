@@ -29,11 +29,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://car-price-prediction-web-app-django-ml-l0it.onrender.com"
 ]
 
-ALLOWED_HOSTS = [
-    "expense-tracker-cf9t.onrender.com",
-    "localhost",
-    "127.0.0.1"
-]
+ALLOWED_HOSTS = ["*"]
 
 
 
