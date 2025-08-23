@@ -1,9 +1,13 @@
 from django.shortcuts import render
 import joblib
 import pandas as pd
+import os
+from django.conf import settings
 
 # Load pipeline (encoding + scaling + model)
-pipeline = joblib.load("car_price_pipeline.pkl")
+model_path = os.path.join(settings.BASE_DIR, "ml", "car_price_pipeline.pkl")
+
+pipeline = joblib.load(model_path)
 
 def home(request):
     context = {}
