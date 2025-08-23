@@ -25,7 +25,16 @@ SECRET_KEY = 'django-insecure-o0o*7l&xr=soc5&c9ee7c#lmoamuql+bo5l3)ee1wjfy1&oqdi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    "https://car-price-prediction-web-app-django-ml-l0it.onrender.com"
+]
+
+ALLOWED_HOSTS = [
+    "expense-tracker-cf9t.onrender.com",
+    "localhost",
+    "127.0.0.1"
+]
+
 
 
 # Application definition
@@ -44,6 +53,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    "django.middleware.csrf.CsrfViewMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
